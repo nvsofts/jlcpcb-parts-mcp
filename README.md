@@ -1,26 +1,28 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/nvsofts-jlcpcb-parts-mcp-badge.png)](https://mseep.ai/app/nvsofts-jlcpcb-parts-mcp)
+
 # JLCPCB Parts MCP Server
 
-## ����͉�
+## これは何
 
-JLCPCB��PCBA�����́A���i�T����⏕����MCP�T�[�o�[�ł��B
+JLCPCBのPCBA向けの、部品探しを補助するMCPサーバーです。
 
-## ��b��
+## 会話例
 
-Basic Parts�ɕ��ނ���Ă���A�t�F���C�g�r�[�Y������������ł��B
-![��b��](images/sample_conversation.png)
+Basic Partsに分類されている、フェライトビーズを検索した例です。
+![会話例](images/sample_conversation.png)
 
-�܂��A�ȉ��̃y�[�W�ł͍~���^DC-DC�R���o�[�^�̒�R�l�̑I����s���Ă��܂��B
+また、以下のページでは降圧型DC-DCコンバータの抵抗値の選定を行っています。
 https://claude.ai/share/9f02f1a4-7b38-48fb-b29a-f10cf1e608ba
 
-## �ݒ�
+## 設定
 
-�f�[�^�x�[�X�Ƃ��āA[JLC PCB SMD Assembly Component Catalogue](https://github.com/yaqwsx/jlcparts)���g�p���Ă��܂��B
-�����ŕ���ZIP�ɂ��Ē񋟂���Ă��� `cache.sqlite3` ���K�v�ł��B2025�N4�����݁A�ԍ��� `cache.z19` �܂ő��݂��܂��B
+データベースとして、[JLC PCB SMD Assembly Component Catalogue](https://github.com/yaqwsx/jlcparts)を使用しています。
+ここで分割ZIPにして提供されている `cache.sqlite3` が必要です。2025年4月現在、番号は `cache.z19` まで存在します。
 
-Python��MCP�����p�\�Ȋ������A�T�[�o�[�Ƃ��� `server.py` ���w�肵�Ă��������B
-�܂��A�f�[�^�x�[�X�ւ̃p�X�� `JLCPCB_DB_PATH` ���ϐ��֐ݒ肷��K�v������܂��B
+PythonでMCPが利用可能な環境を作り、サーバーとして `server.py` を指定してください。
+また、データベースへのパスを `JLCPCB_DB_PATH` 環境変数へ設定する必要があります。
 
-Claude Desktop�ł̐ݒ����ȉ��Ɏ����܂��B
+Claude Desktopでの設定例を以下に示します。
 
 ```json
 {
